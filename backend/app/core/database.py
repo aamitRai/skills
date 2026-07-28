@@ -8,6 +8,7 @@ import logging
 
 from beanie import init_beanie
 from motor.motor_asyncio import AsyncIOMotorClient
+import certifi
 
 from app.core.config import settings
 from app.models.user import User
@@ -31,6 +32,7 @@ async def init_db() -> None:
     global _client
     _client = AsyncIOMotorClient(
         settings.MONGODB_URI,
+            tlsCAFile=certifi.where(),
         serverSelectionTimeoutMS=5000,
     )
     await init_beanie(
