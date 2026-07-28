@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/* ── Design Tokens: Mission Control (Light Mode Base) ── */
+@theme {
+  /* Background */
+  --color-bg-base: #f6f7fa;
+  --color-bg-panel: #ffffff;
+  --color-bg-panel-raised: #eef0f5;
+  --color-grid-line: #e2e5ee;
+
+  /* Borders */
+  --color-border-hairline: #d8dce6;
+
+  /* Accents */
+  --color-accent-signal: #38b5a8;
+  --color-accent-warn: #e09115;
+  --color-accent-critical: #d94f4f;
+
+  /* Text */
+  --color-text-primary: #1a1d26;
+  --color-text-secondary: #5a6378;
+  --color-text-muted: #8a93a6;
+
+  /* Semantic */
+  --color-success: #38a169;
+  --color-info: #3182ce;
+
+  /* Fonts */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Radii */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+}
+
+/* ── Dark Mode Overrides ── */
+.dark {
+  --color-bg-base: #0b0e14;
+  --color-bg-panel: #12161f;
+  --color-bg-panel-raised: #181d29;
+  --color-grid-line: #1a2030;
+  --color-border-hairline: #242b3a;
+  --color-accent-signal: #4fd1c5;
+  --color-accent-warn: #f5a623;
+  --color-accent-critical: #ef5b5b;
+  --color-text-primary: #e6e9f0;
+  --color-text-secondary: #8a93a6;
+  --color-text-muted: #5a6378;
+  --color-success: #48bb78;
+  --color-info: #4299e1;
+}
+
+/* ── Base Reset ── */
+html {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+}
+
+/* Tabular numerals for all data displays */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Scrollbar Styling ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-panel);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-hairline);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
