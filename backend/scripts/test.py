@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 import certifi
 
-uri = "mongodb+srv://amitrai8602:Ideapad9999@amitdb.k2actmy.mongodb.net/?retryWrites=true&w=majority"
+uri = ""
 
 client = MongoClient(
     uri,
